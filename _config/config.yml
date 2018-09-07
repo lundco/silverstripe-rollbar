@@ -1,0 +1,10 @@
+---
+Name: silverstripe-rollbar
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+
+Injector:
+  RollbarLogWriter:
+    class: silverstripe\rollbar\RollbarLogWriter
