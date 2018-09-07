@@ -1,7 +1,7 @@
 {
     "name": "lundco/rollbar",
     "type": "silverstripe-module",
-    "license": "BSD",
+    "license": "BSD-3-Clause",
     "description": "Rollbar integration for SilverStripe. Binds Rollbar to SilverStripe's error & exception handling subsystem.",
     "keywords": ["silverstripe", "rollbar", "logging", "logs", "log", "exception", "error"],
     "author": [
