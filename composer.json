@@ -1,5 +1,5 @@
 {
-    "name": "cmeldgaard/rollbar",
+    "name": "lundco/rollbar",
     "type": "silverstripe-module",
     "license": "BSD",
     "description": "Rollbar integration for SilverStripe. Binds Rollbar to SilverStripe's error & exception handling subsystem.",
