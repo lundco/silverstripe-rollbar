@@ -4,9 +4,11 @@
     "license": "BSD-3-Clause",
     "description": "Rollbar integration for SilverStripe. Binds Rollbar to SilverStripe's error & exception handling subsystem.",
     "keywords": ["silverstripe", "rollbar", "logging", "logs", "log", "exception", "error"],
+	"homepage": "https://github.com/lundco/silverstripe-rollbar/",
     "author": [
         {
-            "name": "Carsten Meldgaard"
+            "name": "Carsten Meldgaard - Lund&co",
+			"email": "info@lund-co.dk"
         }
     ],
     "require": {
@@ -19,5 +21,8 @@
     "extra": {
         "installer-name": "silverstripe-rollbar"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+	"support": {
+		"issues": "https://github.com/lundco/silverstripe-rollbar/issues"
+	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace silverstripe\rollbar;
+namespace silverstripe\rollbar\writer;
 
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;

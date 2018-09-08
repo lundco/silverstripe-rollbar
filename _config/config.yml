@@ -7,4 +7,8 @@ After:
 
 Injector:
   RollbarLogWriter:
-    class: silverstripe\rollbar\RollbarLogWriter
+    class: silverstripe\rollbar\writer\RollbarLogWriter
+
+SilverStripe\CMS\Controllers\ContentController:
+  extensions:
+    - silverstripe\rollbar\Eollbar
