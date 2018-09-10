@@ -1,6 +1,7 @@
 <script>
 	var _rollbarConfig = {
 		accessToken: "POST_CLIENT_ITEM_ACCESS_TOKEN",
+		captureIP: anonymize,
 		captureUncaught: true,
 		captureUnhandledRejections: true,
 		payload: {

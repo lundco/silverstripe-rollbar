@@ -2,13 +2,9 @@
 
 In your project's `_config.php`, set the following
 
-    SS_Log::add_writer(\silverstripe\rollbar\SentryLogWriter::factory(), SS_Log::ERR, '<=');
+    SS_Log::add_writer(\silverstripe\rollbar\writer\RollbarLogWriter::factory(), SS_Log::WARN, '<=');
 
 ## Set extras
-
-You can opt to send extra dato to Rollbar, via passing the optional 3rd parameter to `SS_Log::log()`.
-
-### Via SS_Log::log()
 
 Setting-up everything you think you want to send, all from one spot in `_config.php` is somewhat inflexible. Using the following however,
 we can set additional, arbitrary and context-specific data to be sent to Rollbar via calls to `SS_Log::log()` and its optional

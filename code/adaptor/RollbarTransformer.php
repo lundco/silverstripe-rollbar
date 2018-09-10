@@ -49,6 +49,10 @@ class RollbarTransformer implements TransformerInterface{
 
 	}
 
+	/**
+	 * @param $event
+	 * @return ExceptionInfo
+	 */
 	protected function getExceptionInfo($event){
 
 		$eventMessage = $event['message']['errstr'];
@@ -63,7 +67,11 @@ class RollbarTransformer implements TransformerInterface{
 
 	}
 
-	protected function getFrames($traces){
+	/**
+	 * @param array $traces
+	 * @return array
+	 */
+	protected function getFrames(array $traces){
 		//Initialise frames
 		$frames = [];
 

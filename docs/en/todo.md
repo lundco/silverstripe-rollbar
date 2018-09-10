@@ -1,4 +1,7 @@
 # TODO
 
 * SilverStripe 4 support
-* Handle SS_LOG and exception at the same time
+* Implement sending extra data to Rollbar thru the third paramter of `SS_Log::log()`
+* Improve docblocks in code
+* Impement Rollbar.js
+

@@ -4,12 +4,13 @@ namespace silverstripe\rollbar\writer;
 
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;
+use Config;
 
 require_once THIRDPARTY_PATH . '/Zend/Log/Writer/Abstract.php';
 
 /**
- * The RollbarLogWriter class simply acts as a bridge between the configured Rollbar
- * adaptor and SilverStripe's {@link SS_Log}.
+ * The RollbarLogWriter class simply acts as a bridge between Rollbar
+ * and SilverStripe's {@link SS_Log}.
  *
  * Usage in your project's _config.php for example (See README for examples).
  *
@@ -33,8 +34,10 @@ class RollbarLogWriter extends \Zend_Log_Writer_Abstract
 		//Inject Rollbar logwriter
         $writer = \Injector::inst()->get('RollbarLogWriter');
 
+		$opts = Config::inst()->get('silverstripe\rollbar\writer\RoolbarLogWriter', 'settings');
+
 		$RollbarConfig = array(
-			'access_token' => 'f6cdd31fdcce4b0fb83002ece38c4ace',
+			'access_token' => $opts['post_server_token'],
 			'transformer' => '\silverstripe\rollbar\Adaptor\RollbarTransformer',
 			'environment' => self::getEnv()
 		);
@@ -68,6 +71,10 @@ class RollbarLogWriter extends \Zend_Log_Writer_Abstract
 
     }
 
+	/**
+	 * @param $SS_Level
+	 * @return string
+	 */
 	public function getLevel($SS_Level){
 
     	//Logger will return ERROR as default when logging
@@ -91,6 +98,10 @@ class RollbarLogWriter extends \Zend_Log_Writer_Abstract
 		}
 	}
 
+	/**
+	 * @param $event
+	 * @return array
+	 */
     public function getCustom($event){
     	return array(
 			'tracestack' => $this->getTraces($event),
@@ -101,7 +112,10 @@ class RollbarLogWriter extends \Zend_Log_Writer_Abstract
 		);
 	}
 
-
+	/**
+	 * @param $event
+	 * @return array
+	 */
     public function getTraces($event){
 		//Get the debug backtrace
 		$bt = debug_backtrace();
