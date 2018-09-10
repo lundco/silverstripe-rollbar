@@ -28,7 +28,7 @@ Configure your application or site with the Rollbar Access tokens into your proj
 
     silverstripe\rollbar\RollbarLogWriter:
       settings:
-        # Example DSN only. Obviously you'll need to setup your own Rollbar "Project"
+        # Example tokens only. Obviously you'll need to setup your own Rollbar "Project"
         post_server_token: ciuad6lnc7323jccoapcn7327bf
         post_client_token: c7joadcad9klf8cwn48jndq7ghf
 
